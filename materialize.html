@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lexie Fashion | Media</title>
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fafafa;
+    }
+
+    nav {
+      background-color: #000;
+    }
+
+    .hero {
+      background-color: #fce4ec; /* light pink */
+      padding: 50px 0;
+    }
+
+    .accent {
+      color: #e91e63;
+    }
+
+    .section-light {
+      background-color: #fff;
+    }
+
+    .section-soft {
+      background-color: #f8bbd0;
+    }
+
+    .circle-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card {
+      border-radius: 12px;
+    }
+
+    h2, h4 {
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-wrapper container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="style.html">Style Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="materialize.html">Media</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero center-align">
+  <h2 class="accent">Lexie Fashion</h2>
+  <p>Trendy styles, confidence, and aesthetic inspiration</p>
+</div>
+
+<!-- ABOUT / MEDIA SECTION -->
+<div class="section section-light">
+  <div class="container row">
+    
+    <!-- TEXT -->
+    <div class="col s12 m6">
+      <h4 class="accent">My Style</h4>
+      <p>
+        Fashion is more than clothes — it’s how you express confidence and creativity.
+        I love mixing neutral tones with statement pieces to create looks that feel effortless but elevated.
+      </p>
+    </div>
+
+    <!-- CIRCULAR IMAGE -->
+    <div class="col s12 m6 center-align">
+      <img src="Images/fashion1.jpg" alt="fashion look"
+           class="circle responsive-img circle-img z-depth-3">
+      <p class="accent">Everyday Outfit Inspo</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- STYLE CARDS -->
+<div class="section section-soft">
+  <div class="container">
+    <h4 class="center-align">Style Picks</h4>
+
+    <div class="row">
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="Images/fashion2.jpg">
+          </div>
+          <div class="card-content">
+            <p>Casual streetwear vibes</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="Images/fashion3.jpg">
+          </div>
+          <div class="card-content">
+            <p>Chic and elevated outfits</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="Images/fashion4.jpg">
+          </div>
+          <div class="card-content">
+            <p>Going-out looks</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO SECTION (MEDIA REQUIREMENT) -->
+<div class="section section-light">
+  <div class="container center-align">
+    <h4 class="accent">Fashion Inspiration</h4>
+
+    <!-- RESPONSIVE VIDEO -->
+    <div class="video-container">
+      <iframe width="853" height="480"
+        src="https://www.youtube.com/embed/k7X7sZzSXYs"
+        frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section section-soft">
+  <div class="container">
+    <h4 class="center-align">Get in Touch</h4>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="input-field">
+          <input type="text" id="name">
+          <label for="name">Name</label>
+        </div>
+
+        <div class="input-field">
+          <input type="email" id="email">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea"></textarea>
+          <label for="message">Message</label>
+        </div>
+
+        <button class="btn pink waves-effect waves-light">
+          Send
+        </button>
+      </div>
+
+      <div class="col s12 m6">
+        <h5 class="accent">Follow Me</h5>
+        <p>Instagram: @lexiefashion</p>
+        <p>Email: lexie@fashion.com</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer black">
+  <div class="container center-align">
+    <p class="white-text">© 2026 Lexie Fashion</p>
+  </div>
+</footer>
+
+</body>
+</html>
