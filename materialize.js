@@ -1,13 +1,13 @@
-<script>
 document.addEventListener('DOMContentLoaded', function () {
   // Modal
   const modalElems = document.querySelectorAll('.modal');
   M.Modal.init(modalElems);
 
-  // Fix image paths from images/ to Images/
+  // Fix image paths
   document.querySelectorAll('img').forEach(function(img) {
-    if (img.getAttribute('src') && img.getAttribute('src').includes('images/')) {
-      img.setAttribute('src', img.getAttribute('src').replace('images/', 'Images/'));
+    const src = img.getAttribute('src');
+    if (src && src.includes('images/')) {
+      img.setAttribute('src', src.replace('images/', 'Images/'));
     }
   });
 
@@ -27,9 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const basicNext = document.querySelector('#basicNext');
     const basicGo3 = document.querySelector('#basicGo3');
 
-    if (basicPrev) basicPrev.addEventListener('click', function () { basicInstance.prev(); });
-    if (basicNext) basicNext.addEventListener('click', function () { basicInstance.next(); });
-    if (basicGo3) basicGo3.addEventListener('click', function () { basicInstance.set(2); });
+    if (basicPrev) {
+      basicPrev.addEventListener('click', function () {
+        basicInstance.prev();
+      });
+    }
+
+    if (basicNext) {
+      basicNext.addEventListener('click', function () {
+        basicInstance.next();
+      });
+    }
+
+    if (basicGo3) {
+      basicGo3.addEventListener('click', function () {
+        basicInstance.set(2);
+      });
+    }
   }
 
   // Collapsible
@@ -52,8 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const fwNext = document.querySelector('#fwNext');
     const fwToggle = document.querySelector('#fwToggle');
 
-    if (fwPrev) fwPrev.addEventListener('click', function () { fwInstance.prev(); });
-    if (fwNext) fwNext.addEventListener('click', function () { fwInstance.next(); });
+    if (fwPrev) {
+      fwPrev.addEventListener('click', function () {
+        fwInstance.prev();
+      });
+    }
+
+    if (fwNext) {
+      fwNext.addEventListener('click', function () {
+        fwInstance.next();
+      });
+    }
 
     let autoplayOn = false;
     let autoplayTimer = null;
@@ -108,9 +131,10 @@ function submitEmail(event) {
   const modalElem = document.getElementById('modal1');
   if (modalElem) {
     const modal = M.Modal.getInstance(modalElem);
-    if (modal) modal.open();
+    if (modal) {
+      modal.open();
+    }
   }
 
   emailInput.value = '';
 }
-</script>
