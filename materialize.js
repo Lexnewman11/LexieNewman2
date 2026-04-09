@@ -5,13 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // =========================
   const navHTML = `
     <nav>
-      <ul class="nav-links" style="display:flex; gap:20px; padding:10px; justify-content:center; list-style:none;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="style.html">Style Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="materialize.html">Materialize</a></li>
-      </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="style.html">Style Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="materialize.html">Materialize</a></li>
+      <li><a href="materialize.js">Materialize JS</a></li>
+    </ul>
+  </nav>
   `;
   document.body.insertAdjacentHTML('afterbegin', navHTML);
 
