@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fashion Finds | jQuery Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f3ef;
+      color: #3b2a22;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #5c4033;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-color: #c9a27e;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+      padding: 30px 0;
+    }
+
+    section {
+      background-color: white;
+      margin-bottom: 30px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #5c4033;
+    }
+
+    button {
+      background-color: #5c4033;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #8a624a;
+    }
+
+    #styleBox {
+      background-color: #ead7c3;
+      padding: 25px;
+      margin-top: 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .highlight {
+      background-color: #f1dfcf;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .dark {
+      background-color: #1f1f1f;
+      color: white;
+    }
+
+    .dark section {
+      background-color: #333;
+      color: white;
+    }
+
+    .dark h2 {
+      color: #f1dfcf;
+    }
+
+    footer {
+      background-color: #5c4033;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="style.html">Style</a>
+    <a href="contact.html">Contact</a>
+    <a href="materialize.html">Materialize</a>
+    <a href="bootstrap.html">Bootstrap</a>
+    <a href="jquery.html">jQuery</a>
+
+  </nav>
+
+  <div class="hero">
+    <h1>Fashion Finds jQuery Page</h1>
+    <p>Explore outfit inspiration, styling tips, and interactive fashion features.</p>
+  </div>
+
+  <div class="container">
+
+    <section>
+      <h2>Featured Outfit</h2>
+      <p>This section uses jQuery to show, hide, slide, and fade an outfit idea.</p>
+
+      <button id="toggleBtn">Show / Hide Outfit Box</button>
+      <button id="slideBtn">Slide Outfit Box</button>
+      <button id="fadeBtn">Fade Outfit Box</button>
+
+      <div id="styleBox">
+        <h3>Today’s Look</h3>
+        <p>Neutral jeans, a fitted top, layered jewelry, and a statement bag.</p>
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Fashion shopping">
+      </div>
+    </section>
+
+    <section>
+      <h2>Change the Style Tip</h2>
+      <p>Click the button to change the styling advice shown on the page.</p>
+
+      <button id="textBtn">Change Style Tip</button>
+      <p id="styleTip">Style tip: Start with simple basics and build from there.</p>
+    </section>
+
+    <section>
+      <h2>Build a Mini Outfit List</h2>
+      <p>Click the button to add fashion items to your outfit checklist.</p>
+
+      <button id="addItem">Add Outfit Item</button>
+      <ul id="outfitList"></ul>
+    </section>
+
+    <section>
+      <h2>Fashion Form</h2>
+      <p>Fill out the form to share your favorite fashion style.</p>
+
+      <label for="nameInput">Name:</label>
+      <input type="text" id="nameInput" placeholder="Enter your name">
+
+      <label for="styleInput">Favorite Style:</label>
+      <input type="text" id="styleInput" placeholder="Example: streetwear, preppy, minimal">
+
+      <label for="messageInput">Message:</label>
+      <textarea id="messageInput" rows="4" placeholder="Write your fashion message here"></textarea>
+
+      <button id="submitBtn" type="button">Submit</button>
+
+      <p id="output"></p>
+    </section>
+
+    <section>
+      <h2>Dark Mode</h2>
+      <p>Use this button to switch the website into dark mode.</p>
+
+      <button id="darkModeBtn">Toggle Dark Mode</button>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Lexie's Fashion Website | jQuery Interactive Page</p>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+
+      $("h2").addClass("highlight");
+
+      $("#toggleBtn").click(function() {
+        $("#styleBox").toggle();
+      });
+
+      $("#slideBtn").click(function() {
+        $("#styleBox").slideToggle();
+      });
+
+      $("#fadeBtn").click(function() {
+        $("#styleBox").fadeToggle();
+      });
+
+      $("#textBtn").click(function() {
+        $("#styleTip").text("New style tip: Add one statement piece to make a simple outfit feel more styled.");
+      });
+
+      let counter = 1;
+
+      $("#addItem").click(function() {
+        $("#outfitList").append("<li>Outfit item " + counter + ": Add a staple piece or accessory.</li>");
+        counter++;
+      });
+
+      $("#submitBtn").click(function() {
+        var name = $("#nameInput").val();
+        var style = $("#styleInput").val();
+        var message = $("#messageInput").val();
+
+        $("#output").text("Thank you, " + name + "! Your favorite style is " + style + ". Message: " + message);
+      });
+
+      $("#darkModeBtn").click(function() {
+        $("body").toggleClass("dark");
+      });
+
+    });
+  </script>
+
+</body>
+</html>
